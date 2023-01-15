@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ProfileForm } from './profileForm.styled';
+import { FormMainStyle } from '../commonCSS/formMainStyle.styled';
 import { ProfileAvatar } from './profileAvatar.styled';
 import { ProfileName } from './profileName.styled';
 import { ProfileTag } from './profileTag.styled';
@@ -17,7 +17,7 @@ const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <ProfileForm>
+    <FormMainStyle as="div">
       <div>
         <ProfileAvatar src={avatar} alt={{ username }} />
         <ProfileName>{username}</ProfileName>
@@ -39,7 +39,7 @@ const Profile = ({
           <ProfileQuant>{likes}</ProfileQuant>
         </ProfileStatItem>
       </ProfileStatList>
-    </ProfileForm>
+    </FormMainStyle>
   );
 };
 

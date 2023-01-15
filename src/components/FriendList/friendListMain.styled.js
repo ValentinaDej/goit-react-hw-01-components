@@ -1,11 +1,7 @@
 import styled from '@emotion/styled';
+import { FormMainStyle } from '../commonCSS/formMainStyle.styled';
 
-export const FriendListMain = styled.ul`
+export const FormMainModalList = styled(FormMainStyle)`
   padding: 0;
-  padding-top: 30px;
-  display: block;
-  width: 330px;
-  margin-left: auto;
-  margin-right: auto;
   list-style-type: none;
 `;

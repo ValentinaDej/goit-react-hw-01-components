@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
-import { StatisticsForm } from './statisticsForm.styled';
+import { FormMainStyle } from '../commonCSS/formMainStyle.styled';
 import { StatisticsList } from './statisticsList.styled';
 import { StatisticsItem } from './statisticsItem.styled';
+import { StatisticsName } from './statisticsName.styled';
 import { StatisticsLabel } from './statisticsLabel.styled';
 import { StatisticsPercent } from './statisticsPercent.styled';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <StatisticsForm>
-      {title && <h2 className="title">{title.toUpperCase()}</h2>}
+    <FormMainStyle>
+      {title && <StatisticsName>{title.toUpperCase()}</StatisticsName>}
       <StatisticsList>
         {stats.map(({ id, label, percentage }) => {
           return (
@@ -19,7 +20,7 @@ const Statistics = ({ title, stats }) => {
           );
         })}
       </StatisticsList>
-    </StatisticsForm>
+    </FormMainStyle>
   );
 };
 

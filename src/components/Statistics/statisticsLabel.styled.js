@@ -6,4 +6,5 @@ export const StatisticsLabel = styled.span`
   font-size: 14px;
   font-weight: 400;
   margin-bottom: 5px;
+  text-align: center;
 `;
