@@ -1,27 +1,32 @@
 import PropTypes from 'prop-types';
+import { StatisticsForm } from './statisticsForm.styled';
+import { StatisticsList } from './statisticsList.styled';
+import { StatisticsItem } from './statisticsItem.styled';
+import { StatisticsLabel } from './statisticsLabel.styled';
+import { StatisticsPercent } from './statisticsPercent.styled';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title && <h2 className="title">{title}</h2>}
-      <ul className="stat-list">
+    <StatisticsForm>
+      {title && <h2 className="title">{title.toUpperCase()}</h2>}
+      <StatisticsList>
         {stats.map(({ id, label, percentage }) => {
           return (
-            <li key={id} className="item">
-              <span className="label">{label}</span>
-              <span className="percentage">{percentage}</span>
-            </li>
+            <StatisticsItem key={id}>
+              <StatisticsLabel>{label}</StatisticsLabel>
+              <StatisticsPercent>{percentage}%</StatisticsPercent>
+            </StatisticsItem>
           );
         })}
-      </ul>
-    </section>
+      </StatisticsList>
+    </StatisticsForm>
   );
 };
 
 Statistics.propTypes = {
   title: PropTypes.string.isRequired,
   stats: PropTypes.arrayOf(
-    PropTypes.exact({
+    PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
