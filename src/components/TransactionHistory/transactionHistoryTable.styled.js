@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 
 export const TransactionHistoryTable = styled.table`
   width: 800px;

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 
 function getRandomHexColor() {
   let randomColour = `#${Math.floor(Math.random() * 16777215)
